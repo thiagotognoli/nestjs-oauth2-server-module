@@ -1,5 +1,5 @@
 {
-  "name": "@switchit/nestjs-oauth2-server",
+  "name": "@thiagotognoli/nestjs-oauth2-server",
   "version": "0.1.4",
   "description": "NestJS oauth2 server by SWITCH IT CONSULTING",
   "author": "Switch IT - Consulting",
@@ -16,11 +16,12 @@
     "framework"
   ],
   "bugs": {
-    "url": "https://github.com/switchit-conseil/nestjs-oauth2-server-module/issues"
+    "url": "https://github.com/thiagotognoli/nestjs-oauth2-server-module/issues"
   },
-  "homepage": "https://github.com/switchit-conseil/nestjs-oauth2-server-module#readme",
+  "homepage": "https://github.com/thiagotognoli/nestjs-oauth2-server-module#readme",
   "contributors": [
-    "Nicolas Macherey <nicolas.macherey@gmail.com>"
+    "Nicolas Macherey <nicolas.macherey@gmail.com>",
+    "Thigo Tognoli <dev@togger.com.br>",
   ],
   "scripts": {
     "build": "./node_modules/.bin/rimraf dist && tsc -p tsconfig.json",
