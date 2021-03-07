@@ -1,6 +1,6 @@
 {
   "name": "@thiagotognoli/nestjs-oauth2-server",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "NestJS oauth2 server",
   "author": "Switch IT - Consulting",
   "license": "MIT",
