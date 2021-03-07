@@ -88,14 +88,17 @@ export class Oauth2CoreModule implements OnModuleInit {
             inject: [OAUTH2_SERVER_OPTIONS],
         };
 
+        const paramsTypeOrmModuleForFeature: any[] = [[
+            ClientEntity,
+            AccessTokenEntity,
+        ]];
+        options.useTypeOrmConnection && paramsTypeOrmModuleForFeature.push(options.useTypeOrmConnection);
+
         return {
             module: Oauth2CoreModule,
             imports: [
                 CqrsModule,
-                TypeOrmModule.forFeature([
-                    ClientEntity,
-                    AccessTokenEntity,
-                ]),
+                TypeOrmModule.forFeature(...paramsTypeOrmModuleForFeature),
             ],
             controllers: [
                 Oauth2Controller
@@ -142,15 +145,18 @@ export class Oauth2CoreModule implements OnModuleInit {
             inject: [OAUTH2_SERVER_OPTIONS],
         };
 
+        const paramsTypeOrmModuleForFeature: any[] = [[
+            ClientEntity,
+            AccessTokenEntity,
+        ]];
+        options.useTypeOrmConnection && paramsTypeOrmModuleForFeature.push(options.useTypeOrmConnection);
+
         return {
             module: Oauth2CoreModule,
             imports: [
                 ...(options.imports || []),
                 CqrsModule,
-                TypeOrmModule.forFeature([
-                    ClientEntity,
-                    AccessTokenEntity,
-                ]),
+                TypeOrmModule.forFeature(...paramsTypeOrmModuleForFeature),
             ],
             providers: [
                 ...providers,
