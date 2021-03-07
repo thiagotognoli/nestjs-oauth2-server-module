@@ -1,11 +1,12 @@
-import {ApiModelProperty} from "@nestjs/swagger";
+import {ApiProperty} from "@nestjs/swagger";
 import {Exclude, Expose} from "class-transformer";
 
 /**
  * Main object used to transport data
  */
 export class OAuth2Response {
-    @ApiModelProperty({
+    @ApiProperty({
+        name: 'access_token',
         type:String,
         description: 'The generated access token',
         required: true
@@ -13,7 +14,8 @@ export class OAuth2Response {
     @Expose({name: 'access_token'})
     accessToken: string;
 
-    @ApiModelProperty({
+    @ApiProperty({
+        name: 'token_type',
         type:String,
         description: 'The type of token, in our case should always be "bearer"',
         required: true
@@ -21,7 +23,8 @@ export class OAuth2Response {
     @Expose({name: 'token_type'})
     tokenType: string = 'bearer';
 
-    @ApiModelProperty({
+    @ApiProperty({
+        name: 'refresh_token',
         type: String,
         description: 'The generated refresh token',
         required: true
@@ -29,7 +32,8 @@ export class OAuth2Response {
     @Expose({name: 'refresh_token'})
     refreshToken: string;
 
-    @ApiModelProperty({
+    @ApiProperty({
+        name: 'expires_in',
         type: Number,
         description: 'Number of seconds until the acess token expires',
         required: true
@@ -37,7 +41,7 @@ export class OAuth2Response {
     @Expose({name: 'expires_in'})
     accessTokenExp: number;
 
-    @ApiModelProperty({
+    @ApiProperty({
         type: Number,
         description: 'The list of the permissions (tpApps) that the application requests.',
         required: true
@@ -45,7 +49,7 @@ export class OAuth2Response {
     @Exclude()
     refreshTokenExp: number;
 
-    @ApiModelProperty({
+    @ApiProperty({
         type: String,
         description: 'Scopes you are allowed to use if any requested',
         required: true

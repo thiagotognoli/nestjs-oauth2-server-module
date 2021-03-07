@@ -1,4 +1,4 @@
-import * as uuid from 'uuid/v4';
+import { v4 as uuid } from 'uuid';
 import {Test, TestingModule} from '@nestjs/testing';
 import {CqrsModule, EventBus} from '@nestjs/cqrs';
 import {
