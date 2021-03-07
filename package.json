@@ -1,7 +1,7 @@
 {
   "name": "@thiagotognoli/nestjs-oauth2-server",
-  "version": "0.1.4",
-  "description": "NestJS oauth2 server by SWITCH IT CONSULTING",
+  "version": "0.1.5",
+  "description": "NestJS oauth2 server",
   "author": "Switch IT - Consulting",
   "license": "MIT",
   "main": "dist/index.js",
