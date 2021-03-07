@@ -45,7 +45,6 @@
     "class-validator": "^0.9.1",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
-    "rimraf": "^3.0.0",
     "rxjs": "^6.3.3",
     "selfsigned": "^1.10.6",
     "typeorm": "^0.2.18"
@@ -59,6 +58,7 @@
     "@types/jest": "24.0.11",
     "@types/node": "11.13.4",
     "@types/supertest": "2.0.7",
+    "rimraf": "^3.0.0",
     "cucumber": "^6.0.2",
     "gherkin-jest": "^0.24.0",
     "jest": "24.7.1",

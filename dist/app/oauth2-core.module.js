@@ -86,14 +86,16 @@ let Oauth2CoreModule = Oauth2CoreModule_1 = class Oauth2CoreModule {
             }),
             inject: [oauth2_constants_1.OAUTH2_SERVER_OPTIONS],
         };
+        const paramsTypeOrmModuleForFeature = [[
+                domain_1.ClientEntity,
+                domain_1.AccessTokenEntity,
+            ]];
+        options.useTypeOrmConnection && paramsTypeOrmModuleForFeature.push(options.useTypeOrmConnection);
         return {
             module: Oauth2CoreModule_1,
             imports: [
                 cqrs_1.CqrsModule,
-                typeorm_2.TypeOrmModule.forFeature([
-                    domain_1.ClientEntity,
-                    domain_1.AccessTokenEntity,
-                ]),
+                typeorm_2.TypeOrmModule.forFeature(...paramsTypeOrmModuleForFeature),
             ],
             controllers: [
                 controller_1.Oauth2Controller
@@ -136,15 +138,17 @@ let Oauth2CoreModule = Oauth2CoreModule_1 = class Oauth2CoreModule {
             }),
             inject: [oauth2_constants_1.OAUTH2_SERVER_OPTIONS],
         };
+        const paramsTypeOrmModuleForFeature = [[
+                domain_1.ClientEntity,
+                domain_1.AccessTokenEntity,
+            ]];
+        options.useTypeOrmConnection && paramsTypeOrmModuleForFeature.push(options.useTypeOrmConnection);
         return {
             module: Oauth2CoreModule_1,
             imports: [
                 ...(options.imports || []),
                 cqrs_1.CqrsModule,
-                typeorm_2.TypeOrmModule.forFeature([
-                    domain_1.ClientEntity,
-                    domain_1.AccessTokenEntity,
-                ]),
+                typeorm_2.TypeOrmModule.forFeature(...paramsTypeOrmModuleForFeature),
             ],
             providers: [
                 ...providers,
