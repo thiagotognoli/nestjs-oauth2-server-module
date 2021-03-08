@@ -1,10 +1,12 @@
 import {ApiProperty} from "@nestjs/swagger";
 import {IsNotEmpty} from "class-validator";
 import {Expose} from "class-transformer";
+import { UsePipes, ValidationPipe } from "@nestjs/common";
 
 /**
  * Main object used to transport data
  */
+//@UsePipes(new ValidationPipe({ transform: true }))
 export class OAuth2Request {
     @ApiProperty({
         name: 'grant_type',
@@ -30,7 +32,7 @@ export class OAuth2Request {
         name: 'client_secret',
         type:String,
         description: 'The API Token given by the application',
-        required: true
+        required: false
     })
     @Expose({ name: "client_secret" })
     clientSecret: string;
@@ -38,6 +40,7 @@ export class OAuth2Request {
     @ApiProperty({
         type: Number,
         description: 'The expiration time of the assertion, specified as seconds since 00:00:00 UTC, January 1, 1970. This value has a maximum of 1 hour after the issued time.',
+        required: false
     })
     @Expose({ name: "exp" })
     exp?: number;
@@ -45,6 +48,7 @@ export class OAuth2Request {
     @ApiProperty({
         type: Number,
         description: 'The time the assertion was issued, specified as seconds since 00:00:00 UTC, January 1, 1970.',
+        required: false
     })
     @Expose({ name: "iat" })
     iat?: number;
@@ -60,6 +64,7 @@ export class OAuth2Request {
     @ApiProperty({
         type: String,
         description: 'The refresh token only when grant_type is set to "refresh_token"',
+        required: false
     })
     @Expose({ name: "refresh_token"})
     refreshToken?: string;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ClientPayload = void 0;
 const oauth2_payload_interface_1 = require("./oauth2-payload.interface");
 /**
  * Represents a client's payload

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateClientCommand = void 0;
 /**
  * Command used to create clients
  */

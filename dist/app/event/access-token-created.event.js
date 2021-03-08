@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccessTokenCreatedEvent = void 0;
 /**
  * Event generated when an access token is generated
  */

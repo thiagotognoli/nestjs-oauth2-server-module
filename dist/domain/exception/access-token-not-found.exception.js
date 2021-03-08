@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccessTokenNotFoundException = void 0;
 const common_1 = require("@nestjs/common");
 /**
  * Exception thrown when an access token was not found

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.OAuth2Response = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_transformer_1 = require("class-transformer");
 /**
@@ -34,7 +35,8 @@ class OAuth2Response {
     }
 }
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
+        name: 'access_token',
         type: String,
         description: 'The generated access token',
         required: true
@@ -43,7 +45,8 @@ __decorate([
     __metadata("design:type", String)
 ], OAuth2Response.prototype, "accessToken", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
+        name: 'token_type',
         type: String,
         description: 'The type of token, in our case should always be "bearer"',
         required: true
@@ -52,7 +55,8 @@ __decorate([
     __metadata("design:type", String)
 ], OAuth2Response.prototype, "tokenType", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
+        name: 'refresh_token',
         type: String,
         description: 'The generated refresh token',
         required: true
@@ -61,7 +65,8 @@ __decorate([
     __metadata("design:type", String)
 ], OAuth2Response.prototype, "refreshToken", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
+        name: 'expires_in',
         type: Number,
         description: 'Number of seconds until the acess token expires',
         required: true
@@ -70,7 +75,7 @@ __decorate([
     __metadata("design:type", Number)
 ], OAuth2Response.prototype, "accessTokenExp", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
         type: Number,
         description: 'The list of the permissions (tpApps) that the application requests.',
         required: true
@@ -79,7 +84,7 @@ __decorate([
     __metadata("design:type", Number)
 ], OAuth2Response.prototype, "refreshTokenExp", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({
+    swagger_1.ApiProperty({
         type: String,
         description: 'Scopes you are allowed to use if any requested',
         required: true

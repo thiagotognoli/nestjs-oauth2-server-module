@@ -12,15 +12,17 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var Oauth2CoreModule_1;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Oauth2CoreModule = exports.Providers = exports.Oauth2Strategies = exports.Resolvers = exports.ServiceNames = exports.Services = exports.Sagas = exports.QueryHandlers = exports.EventHandlers = exports.CommandHandlers = void 0;
 const common_1 = require("@nestjs/common");
 const domain_1 = require("../domain");
 const oauth2_constants_1 = require("./oauth2.constants");
